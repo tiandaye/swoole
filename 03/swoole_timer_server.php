@@ -19,6 +19,7 @@ class TimerServer
             'daemonize'     => false,
             'max_request'   => 10000,
             'dispatch_mode' => 2,
+            'debug_mode'    => 1,
         ]);
 
         $this->serv->on('Start', [$this, 'onStart']);
