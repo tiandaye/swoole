@@ -6,6 +6,9 @@
  * Time: 14:21
  */
 
+/**
+ * 设置定时器
+ */
 //每隔2000ms触发一次
 swoole_timer_tick(2000, function ($timer_id) {
     echo "tick-2000ms\n";
