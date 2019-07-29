@@ -48,7 +48,7 @@ $pool->start();
 // 在工作进程中可以配合使用pcntl_signal和pcntl_signal_dispatch实现信号处理。
 $pool->on("WorkerStart", function ($pool, $workerId) {
     $running = true;
-    pcntl_signal(SIGTERM, function () use (&amp;$running) {
+    pcntl_signal(SIGTERM, function () use (&$running) {
         $running = false;
     });
     echo "Worker#{$workerId} is started\n";
