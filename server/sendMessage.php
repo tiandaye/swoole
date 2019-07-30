@@ -16,6 +16,7 @@ $serv->set(array(
     'task_worker_num' => 2,
 ));
 $serv->on('pipeMessage', function ($serv, $src_worker_id, $data) {
+    var_dump($serv->stats());
     echo "#{$serv->worker_id} message from #$src_worker_id: $data\n";
 });
 $serv->on('task', function ($serv, $task_id, $reactor_id, $data) {
